@@ -26,7 +26,7 @@ const issueTokens = (user, res) => {
   res.cookie('refreshToken', refreshToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'Lax',
+    sameSite: 'None',
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
 
@@ -56,7 +56,7 @@ const login = async (req, res) => {
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'Lax',
+      sameSite: 'None',
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
